@@ -7,13 +7,13 @@ public class CoinsText : MonoBehaviour
 {
     public static int Coins;
     public Text _text;
-    void Start()
+    private void Start()
     {
         _text = GetComponent<Text>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         _text.text = Coins.ToString();
     }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MoveOnPath : MonoBehaviour
+public class PathToMove : MonoBehaviour
 {
     [SerializeField] private Transform _path;   // создаем ссылку на компонент Transform объекта путь
     [SerializeField] private float _speed;

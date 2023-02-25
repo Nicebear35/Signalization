@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private const string Speed = "Speed";
+    private const string IsGrounded= "IsGrounded";
+
+
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private Animator _playerAnimator;
@@ -24,21 +28,21 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         _playerRenderer.flipX = false;
-        _playerAnimator.SetFloat("Speed", 0);
-        _playerAnimator.SetBool("IsGrounded", _isGrounded);
+        _playerAnimator.SetFloat(Speed, 0);
+        _playerAnimator.SetBool(IsGrounded, _isGrounded);
 
-        GroundChecker();
+        CheckGround();
 
         if (Input.GetKey(KeyCode.D))
         {
-            _playerAnimator.SetFloat("Speed", _speed);
+            _playerAnimator.SetFloat(Speed, _speed);
             _playerTransform.Translate(_speed * Time.deltaTime, 0, 0);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             _playerRenderer.flipX = true;
-            _playerAnimator.SetFloat("Speed", _speed);
+            _playerAnimator.SetFloat(Speed, _speed);
             _playerTransform.Translate(_speed * Time.deltaTime * -1, 0, 0);
         }
 
@@ -50,7 +54,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void GroundChecker()
+    private void CheckGround()
     {
         _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _checkRadius, _ground);
     }
