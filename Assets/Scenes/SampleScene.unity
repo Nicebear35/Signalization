@@ -2141,7 +2141,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _signalizaton: {fileID: 530210921981890798}
   _timeToChangeVolume: 5
-  _currentVolume: 0
+--- !u!114 &530210921981890802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530210921981890797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619ae42dcec62864fa9daeb2f648a95e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _signalization: {fileID: 530210921981890799}
 --- !u!1001 &2004722709214307808
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,17 +5,19 @@ using UnityEngine;
 
 public class ChestOpening : MonoBehaviour
 {
+    private const string IsInside = "IsInside";
+
     [SerializeField] Animator _animator;
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Player>(out Player player))
         {
-            _animator.SetBool("IsInside", true);
+            _animator.SetBool(IsInside, true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D noCollision)
     {
-        _animator.SetBool("IsInside", false);    
+        _animator.SetBool(IsInside, false);    
     }
 }

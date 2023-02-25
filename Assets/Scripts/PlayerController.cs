@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         _playerAnimator.SetFloat(Speed, 0);
         _playerAnimator.SetBool(IsGrounded, _isGrounded);
 
-        CheckGround();
+        GroundChecker();
 
         if (Input.GetKey(KeyCode.D))
         {
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void CheckGround()
+    private void GroundChecker()
     {
         _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _checkRadius, _ground);
     }

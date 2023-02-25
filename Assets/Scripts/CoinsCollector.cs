@@ -6,13 +6,14 @@ using UnityEngine.Events;
 
 public class CoinsCollector : MonoBehaviour
 {
+    private CoinsText _coinsText;
     [SerializeField] private GameObject _soundEffect;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out Player player))
         {
-            CoinsText.Coins++;
+            _coinsText.IncreasingCoinsCount();
             Destroy(gameObject);
             Destroy(Instantiate(_soundEffect, transform.position, Quaternion.identity), 1);            
         }
